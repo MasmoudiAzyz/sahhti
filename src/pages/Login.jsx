@@ -3,52 +3,83 @@ import logo from "../assets/logo.png";
 
 const Login = () => {
   return (
-    <div className="bg-sky-100 flex justify-center items-center h-screen">
-      <div className="w-1/2 h-screen hidden lg:block">
-        <img
-          src="https://img.freepik.com/fotos-premium/imagen-fondo_910766-187.jpg?w=826"
-          alt="Placeholder Image"
-          className="object-cover w-full h-full"
-        />
+    <div className="flex h-screen">
+      {/* Partie gauche avec le design */}
+      <div className="hidden lg:flex w-1/2 bg-gradient-to-r from-purple-500 to-orange-300 items-center justify-center">
+        <h1 className="text-white text-4xl font-bold">Bienvenue</h1>
       </div>
-      <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-        <div className="flex justify-center">
-          <div className="flex flex-col gap-4">
-            <img
-              src={logo}
-              alt="Placeholder Image"
-              className="rounded-full w-40 h-40"
-            />
-            <h1 className="text-3xl font-semibold mb-4 text-center">
-              Bienvenue
-            </h1>
-          </div>
+
+      {/* Partie droite avec le formulaire */}
+      <div className="flex flex-col justify-center items-center w-full lg:w-1/2 p-10">
+        <div className="flex flex-col items-center mb-6">
+          <img src={logo} alt="Logo" className="w-20 h-20 rounded-full mb-2" />
+          <h1 className="text-3xl font-bold text-gray-800">Sahhti</h1>
+          <p className="text-gray-500">Bienvenue! Veuillez vous connecter.</p>
         </div>
-        <form action="#" method="POST">
-          <div className="mb-4 bg-sky-100">
-            <label for="username" className="block text-gray-600">
-              Username
+
+        <form className="w-full max-w-sm">
+          {/* Champ Nom */}
+          <div className="mb-4">
+            <label htmlFor="nom" className="block text-gray-600 mb-1">
+              Nom :
             </label>
             <input
               type="text"
-              id="username"
-              name="username"
-              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
-              autocomplete="off"
+              id="nom"
+              name="nom"
+              placeholder="Ex: Nom"
+              className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:ring-2 focus:ring-purple-400"
+              autoComplete="off"
             />
           </div>
+
+          {/* Champ Prénom */}
+          <div className="mb-4">
+            <label htmlFor="prenom" className="block text-gray-600 mb-1">
+              Prénom :
+            </label>
+            <input
+              type="text"
+              id="prenom"
+              name="prenom"
+              placeholder="Ex: Prénom"
+              className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:ring-2 focus:ring-purple-400"
+              autoComplete="off"
+            />
+          </div>
+
+          {/* Champ Téléphone */}
+          <div className="mb-4">
+            <label htmlFor="telephone" className="block text-gray-600 mb-1">
+              Numéro de téléphone :
+            </label>
+            <input
+              type="tel"
+              id="telephone"
+              name="telephone"
+              placeholder="Ex: +216 12345678"
+              pattern="[0-9]{8,15}"
+              className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:ring-2 focus:ring-purple-400"
+              autoComplete="off"
+            />
+          </div>
+
+          {/* Checkbox "Rester Connecté" */}
+          <div className="mb-4 flex items-center">
+            <input type="checkbox" id="rememberMe" className="mr-2" />
+            <label htmlFor="rememberMe" className="text-gray-600">
+              Rester Connecté
+            </label>
+          </div>
+
+          {/* Bouton S'inscrire */}
           <button
             type="submit"
-            className="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
+            className="w-full bg-purple-500 hover:bg-purple-600 text-white py-2 rounded-lg font-semibold"
           >
-            Login
+            S'inscrire
           </button>
         </form>
-        <div className="mt-6 text-green-500 text-center">
-          <a href="#" className="hover:underline">
-            Sign up Here
-          </a>
-        </div>
       </div>
     </div>
   );
